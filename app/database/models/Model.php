@@ -1,14 +1,14 @@
 <?php
 namespace app\database\models;
 
-use app\database\Connect;
+use app\database\Connection;
 abstract class Model{
 
   protected string $table;
 
   public function all(string $fields = '*'){
     try {
-      $connection = Connect::getConnection();
+      $connection = Connection::getConnection();
       $sql = "select {$fields} from {$this->table}";
       $query = $connection->query($sql);
       return $query->fetchAll();

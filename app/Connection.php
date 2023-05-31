@@ -2,7 +2,7 @@
   namespace app\database;
   use PDO;
 
-  class Connect{
+  class Connection{
     private static ?PDO $connection = null;
 
     public static function getConnection(){

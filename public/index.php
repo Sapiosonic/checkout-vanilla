@@ -3,7 +3,8 @@
   require '../vendor/autoload.php';
 
   $product = new Product;
-  $product->all('id,name,slug,price,image');
+  $products = $product->all('id,name,slug,price,image');
+  var_dump($products);
 ?>
 <!DOCTYPE html>
 <html lang="en">
