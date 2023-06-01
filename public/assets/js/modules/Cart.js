@@ -8,14 +8,16 @@ const cart = new Cartclass;
 
 btnsAddToCart.forEach(button=>{
   button.addEventListener('click', () => {
-    const product = button.getAttribute('data-product');
-    cart.add();
+    const product = JSON.parse(button.getAttribute('data-product'));
+    // console.log(product);
+    cart.add(product);
   })
 });
 
 btnsRemoveFromCart.forEach((button) => {
   button.addEventListener("click", () => {
-    cart.remove();
+    const product = JSON.parse(button.getAttribute("data-product"));
+    cart.remove(product);
   });
 });
 
